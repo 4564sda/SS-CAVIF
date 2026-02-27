@@ -71,34 +71,6 @@ Typical outputs include:
 The main configuration is defined in `gyrofield/config.py` (or an equivalent config file in the same folder).  
 你提供的配置示例如下（字段含义说明见后）：
 
-```python
-import numpy as np
-
-# Camera intrinsics
-K = np.array([
-    [0, 0, 0],   # fx, 0, cx
-    [0, 0, 0],   # 0, fy, cy
-    [0, 0, 1.0]
-])
-
-# Rotation matrix from IMU frame to camera frame
-R_CAM_IMU = np.array([
-    [0, -1, 0],
-    [-1, 0, 0],
-    [0, 0, -1]
-])
-
-IMAGE_WIDTH = 1280
-IMAGE_HEIGHT = 720
-
-IMU_TIME_OFFSET = 0       # seconds
-READOUT_TIME = None       # seconds (rolling shutter)
-GYRO_SAMPLE_RATE = 0      # Hz (for data validation)
-NUM_BLOCKS = 16
-
-DATA_ROOT = "new_data"
-SCENES = {}
-OUTPUT_DIR = "output"
 Parameters / 参数含义
 K: Camera intrinsic matrix.
 相机内参矩阵（应包含 fx, fy, cx, cy 等有效值；当前示例为占位）。
